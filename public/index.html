@@ -1,405 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GK SINZU BATANG NORTHSIDE</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>𝙺𝙰𝙽𝚃𝙾 𝚂𝙸𝙽 frame | 𝙽𝙾𝚁𝚃𝙷𝚂𝙸𝙳𝙴 𝙼𝙰𝙸𝙻</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            /* Bagong Theme Colors: Batang Northside (Emerald / Cyan / Metallic) */
+            --accent: #00ff88;
+            --gold: #00f0ff;
+            --blue: #0095f6;
+            --bg: #030807; 
+            --glass: rgba(0, 255, 136, 0.02);
+            --glass-border: rgba(0, 240, 255, 0.2);
+        }
 
-    body {
-      background-color: #030712;
-      background-image: 
-        radial-gradient(at 50% 0%, rgba(255, 0, 85, 0.15) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.15) 0px, transparent 50%);
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg); color: #fff; overflow-x: hidden; padding-bottom: 30px; }
 
-    .container {
-      width: 100%;
-      max-width: 420px;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 0, 85, 0.2);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 0, 85, 0.1);
-      text-align: center;
-    }
+        .hero { position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .cover-area {
+            width: 100%; height: 130px; 
+            background: linear-gradient(to bottom, transparent, var(--bg)), url('https://i.gifer.com/4V0b.gif');
+            background-size: cover; background-position: center;
+            border-bottom: 2px solid var(--accent);
+        }
+        .profile-container { margin-top: -45px; text-align: center; z-index: 10; margin-bottom: 15px; }
+        .profile-hex {
+            width: 85px; height: 85px; padding: 3px; background: var(--bg);
+            border-radius: 50%; display: inline-block;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); border: 2px solid var(--gold);
+        }
+        .profile-hex img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        
+        .name-wrapper { 
+            margin-top: 5px; color: var(--gold); display: flex;
+            align-items: center; justify-content: center; gap: 8px;
+        }
 
-    .status-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #64748b;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
+        .wave-text { 
+            display: flex; font-family: 'Syncopate', sans-serif; 
+            font-weight: 700; font-size: 0.9rem; letter-spacing: 2px;
+        }
 
-    .signal-box {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      color: #ff0055;
-    }
+        .wave-text span {
+            display: inline-block;
+            animation: waveAnim 2s infinite ease-in-out;
+            animation-delay: calc(0.1s * var(--i));
+        }
 
-    .title {
-      color: #ff0055;
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
+        @keyframes waveAnim {
+            0%, 40%, 100% { transform: translateY(0); }
+            20% { transform: translateY(-8px); color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+        }
 
-    .verified-icon {
-      background: #3b82f6;
-      color: #fff;
-      border-radius: 50%;
-      width: 16px;
-      height: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-    }
+        .verified-badge { color: var(--blue); font-size: 0.9rem; }
 
-    .sub-title {
-      color: #ff0055;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-top: 8px;
-      margin-bottom: 20px;
-      opacity: 0.9;
-    }
+        section { padding: 0 4%; max-width: 450px; margin: 0 auto; width: 100%; }
+        
+        .section-header {
+            font-family: 'Syncopate', sans-serif; font-size: 0.6rem; font-weight: 700;
+            color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+            text-transform: uppercase; margin-top: 10px;
+        }
+        .section-header::after { content: ""; height: 1px; flex-grow: 1; background: linear-gradient(to right, var(--gold), transparent); opacity: 0.2; }
 
-    .mode-buttons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
+        .card {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            border-radius: 10px; padding: 12px; margin-bottom: 12px;
+        }
 
-    .btn-mode {
-      padding: 10px;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid #1e293b;
-      color: #64748b;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
+        .mode-selector { display: flex; gap: 6px; margin-bottom: 12px; }
+        .mode-btn { 
+            flex: 1; padding: 8px; text-align: center; cursor: pointer; border-radius: 6px; 
+            font-size: 0.55rem; font-family: 'Syncopate'; font-weight: 700; 
+            border: 1px solid rgba(255,255,255,0.1); color: #888; transition: 0.3s;
+        }
+        .mode-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0, 255, 136, 0.08); }
 
-    .btn-mode.active {
-      border-color: #3b82f6;
-      color: #3b82f6;
-      background: rgba(59, 130, 246, 0.1);
-      box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
-    }
+        .input-container { display: flex; gap: 6px; width: 100%; align-items: center; }
+        .form-input {
+            flex: 1; background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(0,255,136,0.2);
+            padding: 10px; border-radius: 6px; color: var(--gold); font-size: 0.7rem; outline: none;
+            min-width: 0;
+        }
 
-    .input-container {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
+        .btn-execute {
+            padding: 10px 10px; border-radius: 6px; border: 1px solid var(--accent);
+            background: transparent; color: var(--accent); font-family: 'Syncopate', sans-serif;
+            font-size: 0.45rem; font-weight: 700; cursor: pointer; text-transform: uppercase;
+            white-space: nowrap;
+        }
 
-    .email-input {
-      flex: 1;
-      background: rgba(3, 7, 18, 0.8);
-      border: 1px solid rgba(255, 0, 85, 0.4);
-      border-radius: 8px;
-      padding: 12px;
-      color: #ff0055;
-      font-size: 13px;
-      font-weight: 600;
-      outline: none;
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
-    }
+        .msg-item {
+            background: rgba(0, 255, 136, 0.03); border: 1px solid rgba(0, 255, 136, 0.15);
+            padding: 12px; border-radius: 8px; margin-top: 8px; border-left: 3px solid var(--accent);
+        }
+        .msg-header { display: flex; justify-content: space-between; font-size: 0.5rem; font-family: 'Syncopate'; color: #888; margin-bottom: 6px; }
+        .code-box {
+            background: rgba(0,0,0,0.5); border: 1px dashed var(--accent);
+            padding: 10px; border-radius: 6px; text-align: center;
+            font-size: 0.9rem; font-weight: 700; color: var(--accent);
+            display: flex; justify-content: space-between; align-items: center;
+        }
 
-    .btn-generate {
-      background: transparent;
-      border: 1px solid #ff0055;
-      color: #ff0055;
-      padding: 0 16px;
-      border-radius: 8px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
+        .history-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .history-actions { display: flex; gap: 10px; align-items: center; }
 
-    .btn-generate:hover {
-      background: #ff0055;
-      color: #fff;
-      box-shadow: 0 0 12px rgba(255, 0, 85, 0.6);
-    }
-
-    .action-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .btn-action {
-      background: transparent;
-      border: 1px solid #ff0055;
-      color: #ff0055;
-      padding: 10px;
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .btn-action:hover {
-      background: rgba(255, 0, 85, 0.15);
-      box-shadow: 0 0 10px rgba(255, 0, 85, 0.3);
-    }
-
-    .section-title {
-      color: #ff0055;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-align: left;
-      margin-bottom: 10px;
-    }
-
-    .inbox-container {
-      background: rgba(3, 7, 18, 0.6);
-      border: 1px solid #1e293b;
-      border-radius: 8px;
-      padding: 12px;
-      min-height: 80px;
-      max-height: 200px;
-      overflow-y: auto;
-      margin-bottom: 20px;
-      text-align: left;
-    }
-
-    .msg-card {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 8px 0;
-      font-size: 11px;
-    }
-
-    .msg-sender {
-      color: #3b82f6;
-      font-weight: bold;
-    }
-
-    .msg-subject {
-      color: #fff;
-      margin-top: 2px;
-    }
-
-    .history-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .history-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(3, 7, 18, 0.6);
-      border: 1px solid #1e293b;
-      padding: 10px 12px;
-      border-radius: 8px;
-      color: #ff0055;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .footer-credit {
-      margin-top: 25px;
-      font-size: 11px;
-      color: #64748b;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    .footer-credit span {
-      color: #ff0055;
-    }
-  </style>
+        #toast {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: #000; font-weight: 700; padding: 10px 15px;
+            border-radius: 4px; font-family: 'Syncopate'; font-size: 0.5rem; z-index: 1000; display: none;
+        }
+        .spinner { border: 2px solid rgba(255,255,255,0.1); border-top: 2px solid var(--gold); border-radius: 50%; width: 10px; height: 10px; animation: spin 0.8s linear infinite; display: inline-block; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
 </head>
-<body>
+<body onclick="playMusic()">
 
-<div class="container">
-  <div class="status-bar">
-    <div class="signal-box">
-      <span>📶</span>
-      <span>5G ONLINE</span>
-    </div>
-    <div id="liveTime">00:00:00 AM</div>
-  </div>
+    <audio id="bgMusic" loop>
+        <source src="sinzu.mp3" type="audio/mpeg">
+    </audio>
 
-  <div class="title">
-    GK SINZU BATANG NORTHSIDE 
-    <span class="verified-icon">✓</span>
-  </div>
-  <div class="sub-title">TEMP MAIL GENERATOR</div>
-
-  <div class="mode-buttons">
-    <button class="btn-mode active" id="randomBtn" onclick="setMode('random')">RANDOM</button>
-    <button class="btn-mode" id="customBtn" onclick="setMode('custom')">CUSTOM</button>
-  </div>
-
-  <div class="input-container">
-    <input type="text" id="emailDisplay" class="email-input" placeholder="Click Generate..." readonly>
-    <button class="btn-generate" onclick="generateEmail()">GENERATE</button>
-  </div>
-
-  <div class="action-grid">
-    <button class="btn-action" onclick="copyEmail()">COPY</button>
-    <button class="btn-action" onclick="checkInbox()">CHECK</button>
-  </div>
-
-  <div class="section-title">INBOX</div>
-  <div class="inbox-container" id="inboxList">
-    <div style="color: #475569; font-size: 12px; text-align: center;">EMPTY</div>
-  </div>
-
-  <div class="section-title">HISTORY</div>
-  <div id="historyList" class="history-list"></div>
-
-  <div class="footer-credit">
-    Made with <span>♥</span> by <span>sinzu</span>
-  </div>
-</div>
-
-<script>
-  let mode = 'random';
-  let currentUsername = '';
-  let currentDomain = '1secmail.com';
-  let history = [];
-
-  function updateTime() {
-    const now = new Date();
-    document.getElementById('liveTime').innerText = now.toLocaleTimeString();
-  }
-  setInterval(updateTime, 1000);
-  updateTime();
-
-  function setMode(selectedMode) {
-    mode = selectedMode;
-    document.getElementById('randomBtn').classList.toggle('active', mode === 'random');
-    document.getElementById('customBtn').classList.toggle('active', mode === 'custom');
-    
-    const input = document.getElementById('emailDisplay');
-    if (mode === 'custom') {
-      input.removeAttribute('readonly');
-      input.value = '';
-      input.placeholder = 'Type username...';
-    } else {
-      input.setAttribute('readonly', true);
-      generateEmail();
-    }
-  }
-
-  function generateEmail() {
-    if (mode === 'random') {
-      currentUsername = Math.random().toString(36).substring(2, 10);
-    } else {
-      const inputVal = document.getElementById('emailDisplay').value.trim();
-      currentUsername = inputVal.split('@')[0] || 'user' + Math.floor(Math.random() * 1000);
-    }
-
-    const fullEmail = `${currentUsername}@${currentDomain}`;
-    document.getElementById('emailDisplay').value = fullEmail;
-    addToHistory(fullEmail);
-    checkInbox();
-  }
-
-  // API Call para basahin ang totoong Inbox Messages
-  async function checkInbox() {
-    const inboxBox = document.getElementById('inboxList');
-    if (!currentUsername) return;
-
-    inboxBox.innerHTML = '<div style="color: #3b82f6; font-size: 12px; text-align: center;">Checking messages...</div>';
-
-    try {
-      const res = await fetch(`https://www.1secmail.com/api/v1/?action=getMessages&login=${currentUsername}&domain=${currentDomain}`);
-      const messages = await res.json();
-
-      if (!messages || messages.length === 0) {
-        inboxBox.innerHTML = '<div style="color: #475569; font-size: 12px; text-align: center;">EMPTY</div>';
-        return;
-      }
-
-      inboxBox.innerHTML = messages.map(msg => `
-        <div class="msg-card">
-          <div class="msg-sender">From: ${msg.from}</div>
-          <div class="msg-subject">${msg.subject}</div>
+    <header class="hero">
+        <div class="cover-area"></div>
+        <div class="profile-container">
+            <div class="profile-hex"><img src="https://i.ibb.co/L9k2D4J/avatar.jpg" alt="GK Sinzu"></div>
+            <div class="name-wrapper">
+                <div class="wave-text">
+                    <span style="--i:1">G</span><span style="--i:2">K</span><span style="--i:3">-</span><span style="--i:4">S</span><span style="--i:5">I</span><span style="--i:6">N</span><span style="--i:7">Z</span><span style="--i:8">U</span>
+                </div>
+                <i class="fas fa-check-circle verified-badge"></i>
+            </div>
+            <p style="font-size: 0.45rem; color: var(--accent); letter-spacing: 2px; margin-top: 4px; font-family: 'Syncopate'; font-weight: 700;">BATANG NORTHSIDE - UGK</p>
         </div>
-      `).join('');
-    } catch (err) {
-      inboxBox.innerHTML = '<div style="color: #ff0055; font-size: 12px; text-align: center;">Failed to fetch messages.</div>';
-    }
-  }
+    </header>
 
-  function addToHistory(email) {
-    if (!history.includes(email)) {
-      history.unshift(email);
-      if (history.length > 5) history.pop();
-      renderHistory();
-    }
-  }
+    <section>
+        <div class="section-header">GMAIL GENERATOR</div>
+        <div class="card">
+            <div class="mode-selector">
+                <div class="mode-btn active" id="randomMode" onclick="setMode('random')">RANDOM</div>
+                <div class="mode-btn" id="customMode" onclick="setMode('custom')">CUSTOM</div>
+            </div>
 
-  function renderHistory() {
-    const list = document.getElementById('historyList');
-    list.innerHTML = history.map(item => `
-      <div class="history-item">
-        <span>${item}</span>
-        <div style="cursor:pointer;" onclick="copySpecific('${item}')">📋</div>
-      </div>
-    `).join('');
-  }
+            <div class="input-container">
+                <input type="text" id="emailInput" class="form-input" placeholder="Click GENERATE..." readonly>
+                <button class="btn-execute" id="actionBtn" onclick="handleAction()">GENERATE</button>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px;">
+                <button class="btn-execute" onclick="copyEmail()">COPY</button>
+                <button class="btn-execute" id="checkBtn" onclick="loadInbox()">CHECK</button>
+            </div>
+        </div>
 
-  function copyEmail() {
-    const email = document.getElementById('emailDisplay').value;
-    if (email) {
-      navigator.clipboard.writeText(email);
-      alert('Copied: ' + email);
-    }
-  }
+        <div class="section-header">INBOX</div>
+        <div id="inbox">
+            <p style="text-align: center; font-size: 0.5rem; color: #444; font-family: 'Syncopate';">WAITING...</p>
+        </div>
 
-  function copySpecific(text) {
-    navigator.clipboard.writeText(text);
-    alert('Copied: ' + text);
-  }
+        <div class="section-header">HISTORY</div>
+        <div id="historyList" class="card" style="padding: 10px; font-size: 0.6rem;"></div>
+    </section>
 
-  generateEmail();
-</script>
+    <div id="toast">SYSTEM READY</div>
 
-</body>
-  </html>
+    <script>
+        const DOMAIN = "@gmail.com";
+        const API_URL = "https://temporary-emaill.netlify.app/api/messages?address="; 
+        
+        let currentMode = 'random';
+        let isMusicPlaying = false;
+
+        function playMusic() {
+            const music = document.getElementById('bgMusic');
+            if(!isMusicPlaying) {
+                music.play().catch(() => {});
+                isMusicPlaying = true;
+            }
+        }
+
+        function setMode(mode) {
+            currentMode = mode;
+            document.getElementById('randomMode').classList.toggle('active', mode === 'random');
+            document.getElementById('customMode').classList.toggle('active', mode === 'custom');
+            const input = document.getElementById('emailInput');
+            input.value = "";
+            input.readOnly = (mode === 'random');
+            document.getElementById('actionBtn').innerText = (mode === 'random' ? "GENERATE" : "CREATE");
+            if(mode === 'custom') input.focus();
+        }
+
+        function handleAction() {
+            const input = document.getElementById('emailInput');
+            const btn = document.getElementById('actionBtn');
+            let val = input.value.trim().toLowerCase();
+            if(currentMode === 'custom' && !val) { showToast("NAME_REQUIRED"); return; }
+
+            btn.disabled = true;
+            btn.innerHTML = `<div class="spinner"></div>`;
+
+            setTimeout(() => {
+                let fullMail = (currentMode === 'random') 
+                    ? Math.random().toString(36).substring(2, 10) + DOMAIN 
+                    : (val.includes('@') ? val.split('@')[0] : val) + DOMAIN;
+
+                input.value = fullMail;
+                saveHistory(fullMail);
+                showToast("MAIL_READY");
+                btn.disabled = false;
+                btn.innerText = (currentMode === 'random' ? "GENERATE" : "CREATE");
+                loadInbox();
+            }, 500);
+        }
+
+        async function loadInbox() {
+            const email = document.getElementById('emailInput').value;
+            if(!email) return;
+            const container = document.getElementById('inbox');
+            container.innerHTML = '<p style="text-align:center; font-size:0.5rem; color:var(--gold);">SYNCING...</p>';
+
+            try {
+                const res = await fetch(API_URL +
