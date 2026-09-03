@@ -2,24 +2,20 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
+// Middleware para sa JSON data
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files mula sa 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
+// Catch-all route para i-redirect ang lahat ng requests sa index.html
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.post('/api/contact', (req, res) => {
-  const { name, email, message } = req.body;
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'All fields are required' });
-  }
-  res.status(200).json({ status: 'success' });
-});
-
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`NEO App server is running on port ${PORT}`);
 });
-
-module.exports = app;
