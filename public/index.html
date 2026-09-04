@@ -3,146 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>𝙺𝙰𝙽𝚃𝙾 𝚂𝙸𝙽 frame | 𝙽𝙾𝚁𝚃𝙷𝚂𝙸𝙳𝙴 𝙼𝙰𝙸𝙻</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>GK SINZU | BATANG NORTHSIDE MAIL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
-            /* Bagong Theme Colors: Batang Northside (Emerald / Cyan / Metallic) */
-            --accent: #00ff88;
-            --gold: #00f0ff;
-            --blue: #0095f6;
-            --bg: #030807; 
-            --glass: rgba(0, 255, 136, 0.02);
-            --glass-border: rgba(0, 240, 255, 0.2);
+            --red: #d61e1e;
+            --concrete: #1a1a1a;
+            --steel: #8a8f98;
+            --chalk: #e8e6df;
+            --bg: #0c0c0d;
+            --panel: rgba(255, 255, 255, 0.03);
+            --panel-border: rgba(214, 30, 30, 0.25);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--bg); color: #fff; overflow-x: hidden; padding-bottom: 30px; }
+        body {
+            background-color: var(--bg); color: var(--chalk); overflow-x: hidden; padding-bottom: 30px;
+            background-image:
+                repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 14px);
+        }
 
         .hero { position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; }
         .cover-area {
-            width: 100%; height: 130px; 
-            background: linear-gradient(to bottom, transparent, var(--bg)), url('https://i.gifer.com/4V0b.gif');
-            background-size: cover; background-position: center;
-            border-bottom: 2px solid var(--accent);
+            width: 100%; height: 120px;
+            background:
+                linear-gradient(to bottom, transparent 40%, var(--bg)),
+                repeating-linear-gradient(-45deg, #1c1c1c 0px, #1c1c1c 10px, #141414 10px, #141414 20px);
+            border-bottom: 3px solid var(--red);
         }
-        .profile-container { margin-top: -45px; text-align: center; z-index: 10; margin-bottom: 15px; }
-        .profile-hex {
-            width: 85px; height: 85px; padding: 3px; background: var(--bg);
-            border-radius: 50%; display: inline-block;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); border: 2px solid var(--gold);
-        }
-        .profile-hex img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
-        
-        .name-wrapper { 
-            margin-top: 5px; color: var(--gold); display: flex;
+        .profile-container { margin-top: 18px; text-align: center; z-index: 10; margin-bottom: 16px; }
+
+        .name-wrapper {
+            margin-top: 10px; color: var(--chalk); display: flex;
             align-items: center; justify-content: center; gap: 8px;
         }
 
-        .wave-text { 
-            display: flex; font-family: 'Syncopate', sans-serif; 
-            font-weight: 700; font-size: 0.9rem; letter-spacing: 2px;
+        .brand-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem; letter-spacing: 3px; line-height: 1;
+            color: var(--chalk);
+            text-shadow: 2px 2px 0 var(--red);
         }
 
-        .wave-text span {
-            display: inline-block;
-            animation: waveAnim 2s infinite ease-in-out;
-            animation-delay: calc(0.1s * var(--i));
-        }
+        .verified-badge { color: var(--red); font-size: 1rem; }
 
-        @keyframes waveAnim {
-            0%, 40%, 100% { transform: translateY(0); }
-            20% { transform: translateY(-8px); color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+        .tagline {
+            font-family: 'Oswald', sans-serif; font-size: 0.68rem; font-weight: 600;
+            color: var(--steel); letter-spacing: 3px; margin-top: 6px; text-transform: uppercase;
+            border-top: 1px solid var(--panel-border); border-bottom: 1px solid var(--panel-border);
+            padding: 4px 10px;
         }
-
-        .verified-badge { color: var(--blue); font-size: 0.9rem; }
 
         section { padding: 0 4%; max-width: 450px; margin: 0 auto; width: 100%; }
-        
+
         .section-header {
-            font-family: 'Syncopate', sans-serif; font-size: 0.6rem; font-weight: 700;
-            color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
-            text-transform: uppercase; margin-top: 10px;
+            font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 600;
+            color: var(--red); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+            text-transform: uppercase; margin-top: 22px; letter-spacing: 1px;
         }
-        .section-header::after { content: ""; height: 1px; flex-grow: 1; background: linear-gradient(to right, var(--gold), transparent); opacity: 0.2; }
+        .section-header::before { content: "//"; color: var(--steel); }
+        .section-header::after { content: ""; height: 1px; flex-grow: 1; background: var(--panel-border); }
 
         .card {
-            background: var(--glass); border: 1px solid var(--glass-border);
-            border-radius: 10px; padding: 12px; margin-bottom: 12px;
+            background: var(--panel); border: 1px solid var(--panel-border);
+            border-left: 3px solid var(--red);
+            padding: 14px; margin-bottom: 12px;
         }
 
         .mode-selector { display: flex; gap: 6px; margin-bottom: 12px; }
-        .mode-btn { 
-            flex: 1; padding: 8px; text-align: center; cursor: pointer; border-radius: 6px; 
-            font-size: 0.55rem; font-family: 'Syncopate'; font-weight: 700; 
-            border: 1px solid rgba(255,255,255,0.1); color: #888; transition: 0.3s;
+        .mode-btn {
+            flex: 1; padding: 9px; text-align: center; cursor: pointer;
+            font-size: 0.65rem; font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.12); color: var(--steel); transition: 0.2s;
         }
-        .mode-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0, 255, 136, 0.08); }
+        .mode-btn.active { border-color: var(--red); color: var(--chalk); background: var(--red); }
 
         .input-container { display: flex; gap: 6px; width: 100%; align-items: center; }
         .form-input {
-            flex: 1; background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(0,255,136,0.2);
-            padding: 10px; border-radius: 6px; color: var(--gold); font-size: 0.7rem; outline: none;
-            min-width: 0;
+            flex: 1; background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255,255,255,0.08);
+            padding: 11px; color: var(--chalk); font-size: 0.72rem; outline: none;
+            min-width: 0; font-family: 'Oswald', sans-serif; letter-spacing: 0.5px;
         }
+        .form-input:focus { border-color: var(--red); }
 
         .btn-execute {
-            padding: 10px 10px; border-radius: 6px; border: 1px solid var(--accent);
-            background: transparent; color: var(--accent); font-family: 'Syncopate', sans-serif;
-            font-size: 0.45rem; font-weight: 700; cursor: pointer; text-transform: uppercase;
-            white-space: nowrap;
+            padding: 11px 12px; border: 1px solid var(--red);
+            background: var(--red); color: var(--chalk); font-family: 'Oswald', sans-serif;
+            font-size: 0.62rem; font-weight: 700; cursor: pointer; text-transform: uppercase;
+            white-space: nowrap; letter-spacing: 1px;
         }
+        .btn-execute:active { transform: translateY(1px); }
 
         .msg-item {
-            background: rgba(0, 255, 136, 0.03); border: 1px solid rgba(0, 255, 136, 0.15);
-            padding: 12px; border-radius: 8px; margin-top: 8px; border-left: 3px solid var(--accent);
+            background: rgba(214, 30, 30, 0.04); border: 1px solid rgba(214, 30, 30, 0.15);
+            padding: 12px; margin-top: 8px; border-left: 3px solid var(--red);
         }
-        .msg-header { display: flex; justify-content: space-between; font-size: 0.5rem; font-family: 'Syncopate'; color: #888; margin-bottom: 6px; }
+        .msg-header { display: flex; justify-content: space-between; font-size: 0.58rem; font-family: 'Oswald', sans-serif; color: var(--steel); margin-bottom: 6px; letter-spacing: 0.5px; }
         .code-box {
-            background: rgba(0,0,0,0.5); border: 1px dashed var(--accent);
-            padding: 10px; border-radius: 6px; text-align: center;
-            font-size: 0.9rem; font-weight: 700; color: var(--accent);
-            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(0,0,0,0.6); border: 1px dashed var(--red);
+            padding: 10px; text-align: center;
+            font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; color: var(--red);
+            display: flex; justify-content: space-between; align-items: center; letter-spacing: 1px;
         }
 
         .history-item {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 9px 4px; border-bottom: 1px solid rgba(255,255,255,0.06);
         }
-        .history-actions { display: flex; gap: 10px; align-items: center; }
+        .history-actions { display: flex; gap: 12px; align-items: center; }
 
         #toast {
             position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-            background: var(--accent); color: #000; font-weight: 700; padding: 10px 15px;
-            border-radius: 4px; font-family: 'Syncopate'; font-size: 0.5rem; z-index: 1000; display: none;
+            background: var(--red); color: var(--chalk); padding: 10px 16px;
+            font-family: 'Oswald', sans-serif; font-size: 0.6rem; font-weight: 600;
+            letter-spacing: 1px; z-index: 1000; display: none; text-transform: uppercase;
         }
-        .spinner { border: 2px solid rgba(255,255,255,0.1); border-top: 2px solid var(--gold); border-radius: 50%; width: 10px; height: 10px; animation: spin 0.8s linear infinite; display: inline-block; }
+        .spinner { border: 2px solid rgba(255,255,255,0.2); border-top: 2px solid var(--chalk); border-radius: 50%; width: 10px; height: 10px; animation: spin 0.8s linear infinite; display: inline-block; }
         @keyframes spin { 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body onclick="playMusic()">
 
     <audio id="bgMusic" loop>
-        <source src="sinzu.mp3" type="audio/mpeg">
+        <source src="theme.mp3" type="audio/mpeg">
     </audio>
 
     <header class="hero">
         <div class="cover-area"></div>
         <div class="profile-container">
-            <div class="profile-hex"><img src="https://i.ibb.co/L9k2D4J/avatar.jpg" alt="GK Sinzu"></div>
             <div class="name-wrapper">
-                <div class="wave-text">
-                    <span style="--i:1">G</span><span style="--i:2">K</span><span style="--i:3">-</span><span style="--i:4">S</span><span style="--i:5">I</span><span style="--i:6">N</span><span style="--i:7">Z</span><span style="--i:8">U</span>
-                </div>
+                <div class="brand-text">GK SINZU</div>
                 <i class="fas fa-check-circle verified-badge"></i>
             </div>
-            <p style="font-size: 0.45rem; color: var(--accent); letter-spacing: 2px; margin-top: 4px; font-family: 'Syncopate'; font-weight: 700;">BATANG NORTHSIDE - UGK</p>
+            <p class="tagline">Batang Northside &middot; SHUKGNG</p>
         </div>
     </header>
 
     <section>
-        <div class="section-header">GMAIL GENERATOR</div>
+        <div class="section-header">Gmail Generator</div>
         <div class="card">
             <div class="mode-selector">
                 <div class="mode-btn active" id="randomMode" onclick="setMode('random')">RANDOM</div>
@@ -153,28 +152,28 @@
                 <input type="text" id="emailInput" class="form-input" placeholder="Click GENERATE..." readonly>
                 <button class="btn-execute" id="actionBtn" onclick="handleAction()">GENERATE</button>
             </div>
-            
+
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px;">
                 <button class="btn-execute" onclick="copyEmail()">COPY</button>
                 <button class="btn-execute" id="checkBtn" onclick="loadInbox()">CHECK</button>
             </div>
         </div>
 
-        <div class="section-header">INBOX</div>
+        <div class="section-header">Inbox</div>
         <div id="inbox">
-            <p style="text-align: center; font-size: 0.5rem; color: #444; font-family: 'Syncopate';">WAITING...</p>
+            <p style="text-align: center; font-size: 0.6rem; color: var(--steel); font-family: 'Oswald', sans-serif; letter-spacing: 1px;">WAITING...</p>
         </div>
 
-        <div class="section-header">HISTORY</div>
-        <div id="historyList" class="card" style="padding: 10px; font-size: 0.6rem;"></div>
+        <div class="section-header">History</div>
+        <div id="historyList" class="card" style="padding: 6px 10px; font-size: 0.6rem;"></div>
     </section>
 
     <div id="toast">SYSTEM READY</div>
 
     <script>
-        const DOMAIN = "@gmail.com";
-        const API_URL = "https://temporary-emaill.netlify.app/api/messages?address="; 
-        
+        const DOMAIN = "@timpmeyl.indevs.in";
+        const API_URL = "https://temporary-emaill.netlify.app/api/messages?address=";
+
         let currentMode = 'random';
         let isMusicPlaying = false;
 
@@ -207,8 +206,8 @@
             btn.innerHTML = `<div class="spinner"></div>`;
 
             setTimeout(() => {
-                let fullMail = (currentMode === 'random') 
-                    ? Math.random().toString(36).substring(2, 10) + DOMAIN 
+                let fullMail = (currentMode === 'random')
+                    ? Math.random().toString(36).substring(2, 10) + DOMAIN
                     : (val.includes('@') ? val.split('@')[0] : val) + DOMAIN;
 
                 input.value = fullMail;
@@ -224,7 +223,67 @@
             const email = document.getElementById('emailInput').value;
             if(!email) return;
             const container = document.getElementById('inbox');
-            container.innerHTML = '<p style="text-align:center; font-size:0.5rem; color:var(--gold);">SYNCING...</p>';
+            container.innerHTML = '<p style="text-align:center; font-size:0.6rem; color:var(--red); font-family:\'Oswald\',sans-serif; letter-spacing:1px;">SYNCING...</p>';
 
             try {
-                const res = await fetch(API_URL +
+                const res = await fetch(API_URL + email + "&nocache=" + Date.now());
+                const data = await res.json();
+                if(!data || data.length === 0) {
+                    container.innerHTML = '<p style="text-align:center; font-size:0.6rem; color:var(--steel); font-family:\'Oswald\',sans-serif; letter-spacing:1px;">EMPTY</p>';
+                } else {
+                    container.innerHTML = data.map(msg => {
+                        const code = (msg.subject || "").match(/\b\d{5,8}\b/);
+                        return `
+                            <div class="msg-item">
+                                <div class="msg-header"><span>${msg.from.split('<')[0].replace(/"/g, '')}</span><span>${new Date(msg.date).toLocaleTimeString()}</span></div>
+                                <div class="code-box"><span>${code ? code[0] : 'VIEW'}</span><i class="fas fa-copy" onclick="copyToClipboard('${code ? code[0] : msg.subject}')"></i></div>
+                            </div>`;
+                    }).join('');
+                }
+            } catch (e) { container.innerHTML = '<p style="color:var(--red); text-align:center; font-size:0.6rem; font-family:\'Oswald\',sans-serif;">ERROR</p>'; }
+        }
+
+        function saveHistory(email) {
+            let history = JSON.parse(localStorage.getItem('tempMailGkSinzu') || '[]');
+            if(!history.includes(email)) {
+                history.unshift(email);
+                localStorage.setItem('tempMailGkSinzu', JSON.stringify(history.slice(0, 5)));
+            }
+            renderHistory();
+        }
+
+        function renderHistory() {
+            const history = JSON.parse(localStorage.getItem('tempMailGkSinzu') || '[]');
+            const list = document.getElementById('historyList');
+            if(!history.length) { list.innerHTML = '<p style="text-align:center; color:var(--steel); font-family:\'Oswald\',sans-serif; padding:8px 0; letter-spacing:1px; font-size:0.6rem;">EMPTY</p>'; return; }
+            list.innerHTML = history.map((h, i) => `
+                <div class="history-item">
+                    <span style="color:var(--chalk); font-size:0.62rem; font-family:'Oswald',sans-serif; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:70%;">${h}</span>
+                    <div class="history-actions">
+                        <i class="fas fa-sync" style="color:var(--steel);" onclick="useHistory('${h}')"></i>
+                        <i class="fas fa-trash" style="color:var(--red);" onclick="deleteHistory(${i})"></i>
+                    </div>
+                </div>`).join('');
+        }
+
+        function deleteHistory(index) {
+            let history = JSON.parse(localStorage.getItem('tempMailGkSinzu') || '[]');
+            history.splice(index, 1);
+            localStorage.setItem('tempMailGkSinzu', JSON.stringify(history));
+            renderHistory();
+            showToast("DELETED");
+        }
+
+        function useHistory(email) {
+            document.getElementById('emailInput').value = email;
+            loadInbox();
+            showToast("RESTORED");
+        }
+
+        function copyEmail() { const m = document.getElementById('emailInput').value; if(m) copyToClipboard(m); }
+        function copyToClipboard(t) { navigator.clipboard.writeText(t); showToast("COPIED"); }
+        function showToast(m) { const t = document.getElementById('toast'); t.innerText = m; t.style.display = 'block'; setTimeout(() => t.style.display = 'none', 2000); }
+        window.onload = renderHistory;
+    </script>
+</body>
+</html>
